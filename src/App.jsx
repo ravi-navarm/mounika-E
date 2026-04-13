@@ -4,7 +4,10 @@ import { CalendarDays, Heart, MapPin, Sparkles } from "lucide-react";
 
 const krishnaImage = "/krishna.png";
 const radhaImage = "/radha.png";
-const engagementPoster = "/group.png";
+const danceImage = "/radha-krishna-dance.png";
+const boatImage = "/radha-krishna-boat.png";
+const fluteImage = "/radha-krishna-flute.png";
+const swingImage = "/radha-krishna-swing.png";
 
 const petals = Array.from({ length: 18 }, (_, i) => ({
   id: i,
@@ -29,12 +32,7 @@ function FloatingPetals() {
             opacity: [0, 0.7, 0.45, 0],
             scale: [petal.scale, petal.scale + 0.12, petal.scale],
           }}
-          transition={{
-            duration: petal.duration,
-            repeat: Infinity,
-            delay: petal.delay,
-            ease: "linear",
-          }}
+          transition={{ duration: petal.duration, repeat: Infinity, delay: petal.delay, ease: "linear" }}
         >
           ✿
         </motion.div>
@@ -163,7 +161,7 @@ export default function App() {
 
   useEffect(() => {
     const introTimer = setTimeout(() => setStage("site"), 5200);
-    const target = new Date("2026-04-26T18:00:00").getTime();
+    const target = new Date("2026-04-26T09:00:00").getTime();
 
     const updateCountdown = () => {
       const now = Date.now();
@@ -188,15 +186,15 @@ export default function App() {
   const detailCards = [
     {
       icon: CalendarDays,
-      title: "Sacred Date",
-      value: "26 April 2026",
-      text: "An evening of blessings, laughter, music, and a promise written with grace.",
+      title: "Date & Time",
+      value: "26 April · 9:00 AM",
+      text: "A beautiful morning with family, laughter, and the start of a lovely new chapter.",
     },
     {
       icon: MapPin,
       title: "Venue",
       value: "Hotel Kass",
-      text: "A warm setting prepared with florals, light, and a joyful festive aura.",
+      text: "A warm setting prepared with flowers, light, and happy celebration.",
       link: "https://maps.app.goo.gl/Cn1dToMioiiW4LJ16",
     },
   ];
@@ -245,30 +243,24 @@ export default function App() {
                     <div className="absolute inset-x-0 bottom-0 mx-auto h-0 w-0 border-l-[140px] border-r-[140px] border-b-[95px] border-l-transparent border-r-transparent border-b-[#efcf8c] sm:border-l-[190px] sm:border-r-[190px] sm:border-b-[130px] md:border-l-[220px] md:border-r-[220px] md:border-b-[145px]" />
 
                     <motion.div
-                      initial={{ y: 70, opacity: 0.2 }}
-                      animate={{ y: [70, 70, -18, -18], opacity: [0.2, 0.2, 1, 1] }}
+                      initial={{ y: 70, opacity: 0.2, scale: 0.92 }}
+                      animate={{ y: [70, 70, -12, -12], opacity: [0.2, 0.2, 1, 1], scale: [0.92, 0.92, 1, 1] }}
                       transition={{ duration: 2.3, times: [0, 0.28, 0.78, 1], ease: "easeInOut", delay: 0.35 }}
-                      className="absolute left-1/2 top-[12%] z-10 w-[92%] max-w-[540px] -translate-x-1/2 rounded-[22px] border border-[#d8b777]/25 bg-white/92 px-4 py-4 text-center shadow-[0_18px_40px_rgba(106,74,70,.14)] backdrop-blur-xl sm:top-[15%] sm:w-[88%] sm:rounded-[28px] sm:px-6 sm:py-6 md:px-10 md:py-8"
+                      className="absolute left-1/2 top-[16%] z-10 flex h-[230px] w-[230px] -translate-x-1/2 items-center justify-center rounded-full border border-[#d8b777]/25 bg-white/72 shadow-[0_18px_40px_rgba(106,74,70,.14)] backdrop-blur-xl sm:top-[17%] sm:h-[250px] sm:w-[250px]"
                     >
-                      <p className="text-[10px] uppercase tracking-[0.28em] text-[#8d6132] sm:text-xs sm:tracking-[0.34em]">
-                        With joyful hands, we invite you to
-                      </p>
-                      <h1 className="mt-3 font-serif text-[1.55rem] leading-tight text-[#2b1412] sm:mt-4 sm:text-3xl md:text-5xl">
-                        Mounika & Manoj’s wedding celebration
-                      </h1>
-                      <p className="mx-auto mt-3 max-w-2xl text-[11px] leading-5 text-[#4f3734] sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
-                        Join us for a beautiful celebration of love, blessings, and togetherness as our families gather to witness this sacred beginning and share in the joy of our wedding festivities.
-                      </p>
-                      <div className="mt-3 flex flex-wrap items-center justify-center gap-2 sm:mt-5 sm:gap-3">
-                        {["26 April 2026", "Hotel Kass"].map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-[#dcc18d]/35 bg-white px-3 py-1.5 text-[11px] text-[#4f3734] sm:px-4 sm:py-2 sm:text-sm"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
+                      <motion.div
+                        animate={{ rotate: [0, 8, -8, 0], y: [0, -6, 0] }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                        className="relative"
+                      >
+                        <div className="h-28 w-28 rounded-full border-[14px] border-[#ddb967] shadow-[0_0_45px_rgba(221,185,103,.42)] sm:h-32 sm:w-32" />
+                        <motion.div
+                          animate={{ scale: [1, 1.08, 1], rotate: [45, 50, 45] }}
+                          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                          className="absolute left-1/2 top-[-30px] h-12 w-12 -translate-x-1/2 rotate-45 rounded-[12px] border-4 border-[#f5d785] bg-white/95 shadow-[0_0_28px_rgba(245,215,133,.8)]"
+                        />
+                        <div className="absolute left-1/2 top-[-12px] h-3 w-3 -translate-x-1/2 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,1)]" />
+                      </motion.div>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -292,8 +284,7 @@ export default function App() {
             <GlowOrb className="bottom-40 left-[15%] h-72 w-72 opacity-30" />
 
             <section className="relative overflow-hidden px-5 pb-16 pt-16 md:px-8 md:pt-20">
-              <div className="relative mx-auto max-w-7xl px-1 sm:px-0">
-                <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr]">
+              <div className="relative mx-auto max-w-7xl px-1 sm:px-0">                <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr]">
                   <div>
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
@@ -302,7 +293,7 @@ export default function App() {
                       className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#d8b777]/30 bg-white/70 px-4 py-2 text-xs uppercase tracking-[0.35em] text-[#8d6132] backdrop-blur-md"
                     >
                       <Heart className="h-3.5 w-3.5" />
-                      Wedding Celebration
+                      Ring Ceremony
                     </motion.p>
 
                     <motion.h1
@@ -320,7 +311,7 @@ export default function App() {
                       transition={{ delay: 0.3 }}
                       className="mt-5 max-w-2xl text-sm leading-7 text-[#4f3734] sm:text-base sm:leading-8 md:text-lg"
                     >
-                      With hearts full of gratitude and joy, we invite you to witness a luminous evening where devotion, family, and love meet in one beautiful promise.
+                      We’re happy to invite you to our ring ceremony and celebrate this special morning with the people we love most.
                     </motion.p>
 
                     <motion.div
@@ -329,7 +320,7 @@ export default function App() {
                       transition={{ delay: 0.38 }}
                       className="mt-8 flex flex-wrap gap-3"
                     >
-                      {["Blessings & Celebration", "Divine Romance", "Elegant Evening"].map((pill) => (
+                      {["Family & Blessings", "A Special Morning", "Celebrate With Us"].map((pill) => (
                         <span
                           key={pill}
                           className="rounded-full border border-[#d8b777]/30 bg-white/75 px-4 py-2 text-sm text-[#4b312e] backdrop-blur-md"
@@ -350,9 +341,9 @@ export default function App() {
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(244,208,120,.22),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(236,181,200,.2),transparent_30%),radial-gradient(circle_at_center,rgba(121,191,170,.14),transparent_40%),radial-gradient(circle_at_right,rgba(109,169,224,.12),transparent_35%)]" />
                       <div className="relative overflow-hidden rounded-[22px] border border-[#d8b777]/20 bg-white/55 p-2 sm:rounded-[26px] sm:p-3">
                         <img
-                          src={engagementPoster}
-                          alt="Mounika and Manoj engagement poster"
-                          className="w-full rounded-[18px] object-cover sm:rounded-[22px]"
+                          src={swingImage}
+                          alt="Radha Krishna swing artwork"
+                          className="h-[360px] w-full rounded-[18px] object-cover object-center sm:h-[520px] sm:rounded-[22px]"
                         />
                       </div>
                     </GlassCard>
@@ -401,8 +392,8 @@ export default function App() {
               <div className="mx-auto max-w-7xl px-1 sm:px-0">
                 <SectionTitle
                   eyebrow="Countdown"
-                  title="The celebration begins soon"
-                  subtitle="Counting the days until Mounika & Manoj begin this beautiful new chapter surrounded by love, family, and blessings."
+                  title="The day is getting close"
+                  subtitle="Counting down to a beautiful morning filled with love, family, and happy memories."
                 />
                 <LotusDivider />
                 <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
@@ -423,20 +414,20 @@ export default function App() {
                 >
                   <GlassCard className="relative overflow-hidden p-0">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,208,120,.18),transparent_35%),radial-gradient(circle_at_bottom,rgba(121,191,170,.14),transparent_35%),radial-gradient(circle_at_right,rgba(109,169,224,.12),transparent_35%)]" />
-                    <div className="relative grid min-h-[320px] grid-cols-2 gap-2 p-2 sm:min-h-[430px] sm:gap-3 sm:p-4">
+                    <div className="relative grid items-stretch gap-2 p-2 sm:gap-3 sm:p-4 md:grid-cols-2">
                       <motion.div
-                        animate={{ y: [0, -8, 0] }}
+                        animate={{ y: [0, -6, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="flex items-end justify-center rounded-[22px] border border-[#d8b777]/20 bg-white/60 p-2"
+                        className="flex h-full overflow-hidden rounded-[22px] border border-[#d8b777]/20 bg-white/60 p-2"
                       >
-                        <img src={krishnaImage} alt="Krishna inspired visual" className="h-[200px] w-auto object-contain sm:h-[280px] md:h-[400px]" />
+                        <img src={fluteImage} alt="Radha Krishna flute artwork" className="h-[280px] w-full rounded-[18px] object-cover object-center sm:h-[360px] md:h-[430px]" />
                       </motion.div>
                       <motion.div
-                        animate={{ y: [0, 8, 0] }}
+                        animate={{ y: [0, 6, 0] }}
                         transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut" }}
-                        className="flex items-end justify-center rounded-[22px] border border-[#d8b777]/20 bg-white/60 p-2"
+                        className="flex h-full overflow-hidden rounded-[22px] border border-[#d8b777]/20 bg-white/60 p-2"
                       >
-                        <img src={radhaImage} alt="Radha inspired visual" className="h-[220px] w-auto object-contain sm:h-[300px] md:h-[430px]" />
+                        <img src={boatImage} alt="Radha Krishna boat artwork" className="h-[280px] w-full rounded-[18px] object-cover object-center sm:h-[360px] md:h-[430px]" />
                       </motion.div>
                     </div>
                   </GlassCard>
@@ -449,19 +440,22 @@ export default function App() {
                 >
                   <SectionTitle
                     eyebrow="Our Story"
-                    title="Like a melody carried gently through time, their love found its moment"
-                    subtitle="Some bonds feel fated from the beginning. Mounika and Manoj bring together warmth, trust, laughter, and quiet devotion in a journey that feels both timeless and beautifully new."
+                    title="A bond that feels easy and true"
+                    subtitle="Some people just feel right together. Mounika and Manoj’s story is full of warmth, comfort, laughter, and a bond that has grown naturally over time."
                   />
                   <GlassCard className="mt-6 sm:mt-8">
-                    <div className="space-y-5 text-sm leading-8 text-[#4f3734] md:text-base">
+                    <div className="mb-5 overflow-hidden rounded-[22px] border border-[#d8b777]/20 bg-white/60 p-2">
+                      <img src={danceImage} alt="Radha Krishna dance scene" className="h-[220px] w-full rounded-[18px] object-cover object-center sm:h-[260px]" />
+                    </div>
+                    <div className="space-y-4 text-sm leading-7 text-[#4f3734] md:text-base">
                       <p>
-                        Their story is one of steady affection, shared values, meaningful conversations, and a connection that deepened with grace.
+                        Their story feels warm, easy, and full of genuine care.
                       </p>
                       <p>
-                        In every smile, every prayer, and every hopeful step, they discovered a companionship that feels gentle yet unwavering.
+                        What began simply grew into a bond built on comfort, understanding, and being there for each other.
                       </p>
                       <p>
-                        This wedding marks the beginning of a radiant chapter, blessed by family, guided by love, and celebrated with those dearest to their hearts.
+                        This ring ceremony is the start of a beautiful new chapter, shared with the people who matter most.
                       </p>
                     </div>
                   </GlassCard>
@@ -479,15 +473,15 @@ export default function App() {
                   <GlassCard className="relative overflow-hidden p-5 text-center sm:p-8 md:p-12">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,208,120,.18),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(236,181,200,.16),transparent_32%),radial-gradient(circle_at_top_left,rgba(121,191,170,.12),transparent_30%),radial-gradient(circle_at_right,rgba(109,169,224,.12),transparent_35%)]" />
                     <div className="relative">
-                      <p className="text-xs uppercase tracking-[0.35em] text-[#8d6132]">Blessing & Save The Date</p>
+                      <p className="text-xs uppercase tracking-[0.35em] text-[#8d6132]">Save The Date</p>
                       <h3 className="mt-3 font-serif text-3xl leading-tight text-[#2b1412] sm:mt-4 sm:text-4xl md:text-5xl">
-                        Join us as love is adorned with promise
+                        Please join us for a beautiful morning
                       </h3>
                       <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-[#4f3734] md:text-base">
-                        Your presence, blessings, and joyful wishes will make this evening even more memorable. Please save the date and celebrate this beautiful beginning with Mounika & Manoj.
+                        Your presence and blessings would mean a lot to us. Please save the date and come celebrate this happy beginning with Mounika & Manoj.
                       </p>
                       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                        {["26 April 2026", "Hotel Kass", "With Love & Light"].map((item) => (
+                        {["26 April · 9:00 AM", "Hotel Kass", "With love, Mounika & Manoj"].map((item) => (
                           <span
                             key={item}
                             className="rounded-full border border-[#dcc18d]/35 bg-white/80 px-4 py-2 text-sm text-[#4f3734]"
@@ -510,7 +504,7 @@ export default function App() {
                   <div>
                     <p className="text-xs uppercase tracking-[0.32em] text-[#8d6132]">Mounika & Manoj</p>
                     <p className="mt-3 max-w-xl text-sm leading-7 text-[#4f3734]">
-                      Peacock-feather splendor, lotus softness, and a celebration made radiant with blessings.
+                      A celebration shaped with music, flowers, and the timeless beauty of Radha Krishna.
                     </p>
                   </div>
                   <div className="flex items-center gap-4 text-2xl text-[#b98a43]">
