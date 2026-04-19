@@ -325,7 +325,7 @@ function IntroLotus() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 1.15 }}
                 >
-                  With love and blessings
+                  From Ponnoju Vidya Sagar & Vani
                 </motion.p>
                 <motion.h3
                   className="mt-3 font-serif text-2xl leading-tight text-[#4a2e2a] sm:text-3xl"
@@ -341,7 +341,7 @@ function IntroLotus() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 1.42 }}
                 >
-                  Warmly invite you to their ring ceremony
+                  warmly invite you to their ring ceremony
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -367,7 +367,7 @@ export default function App() {
 
   useEffect(() => {
     const introTimer = setTimeout(() => setStage("site"), 5200);
-    const target = new Date("2026-04-26T09:00:00").getTime();
+    const target = new Date("2026-04-26T10:30:00").getTime();
     const updateCountdown = () => {
       const now = Date.now();
       const diff = Math.max(target - now, 0);
@@ -390,13 +390,13 @@ export default function App() {
     {
       icon: CalendarDays,
       title: "Date & Time",
-      value: "26 April · 9:00 AM",
+      value: "26 April · 10:30 AM",
       text: "A beautiful morning with family, laughter, and the start of a lovely new chapter.",
     },
     {
       icon: MapPin,
       title: "Venue",
-      value: "Hotel Kass",
+      value: "Hotel Kass, 5th Floor, Kompally",
       text: "A warm setting prepared with flowers, light, and happy celebration.",
       link: "https://maps.app.goo.gl/Cn1dToMioiiW4LJ16",
     },
@@ -570,7 +570,7 @@ export default function App() {
                       <h3 className="mt-3 font-serif text-3xl leading-tight text-[#2b1412] sm:mt-4 sm:text-4xl md:text-5xl">Please join us for a beautiful morning</h3>
                       <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-[#4f3734] md:text-base">Your presence and blessings would mean a lot to us. Please save the date and come celebrate this happy beginning with Mounika & Manoj.</p>
                       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                        {["26 April · 9:00 AM", "Hotel Kass", "With love, Mounika & Manoj"].map((item) => (
+                        {["26 April · 10:30 AM", "Hotel Kass, 5th Floor, Kompally", "With love, Mounika & Manoj"].map((item) => (
                           <span key={item} className="rounded-full border border-[#dcc18d]/35 bg-white/80 px-4 py-2 text-sm text-[#4f3734]">
                             {item}
                           </span>
